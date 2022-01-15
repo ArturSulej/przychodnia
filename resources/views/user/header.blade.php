@@ -58,6 +58,9 @@
 
             @if(Route::has('login'))
                 @auth
+                <li class="nav-item">
+                  <a class="nav-link" style="background-color: greenyellow;color: white;" href="{{url('myappointment')}}">My Appointments</a>
+                </li>
                 <x-app-layout>
                 </x-app-layout>      
                 @else
@@ -77,3 +80,10 @@
       </div> <!-- .container -->
     </nav>
   </header>
+
+  @if(session()->has('message'))
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">X</button>
+      {{session()->get('message')}}
+    </div>
+  @endif
