@@ -140,5 +140,21 @@
           <span class="menu-title">Add Doctor</span>
         </a>
       </li>
+      <li class="nav-item menu-items">
+        <a class="nav-link" href="{{url('showappointment')}}">
+          <span class="menu-icon">
+            <i class="mdi mdi-table-large"></i>
+          </span>
+          <span class="menu-title">Appointments</span>
+        </a>
+      </li>
+      <li class="nav-item menu-items">
+        <a class="nav-link" href="{{url('showdoctor')}}">
+          <span class="menu-icon">
+            <i class="mdi mdi-contacts"></i>
+          </span>
+          <span class="menu-title">View Doctors</span>
+        </a>
+      </li>
     </ul>
   </nav>

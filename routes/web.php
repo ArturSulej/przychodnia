@@ -16,11 +16,7 @@ use App\Http\Controllers\AdminController; // Pozwala używać AdminController
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
+
 Route::get('/',[HomeController::class,'index']);
 
 Route::get('/home',[HomeController::class,'redirect']);
@@ -38,3 +34,15 @@ Route::post('/appointment',[HomeController::class,'appointment']);
 Route::get('/myappointment',[HomeController::class,'myappointment']);
 
 Route::get('/cancel_appoint/{id}',[HomeController::class,'cancel_appoint']);
+
+Route::get('/showappointment',[AdminController::class,'showappointment']);
+
+Route::get('/approved/{id}',[AdminController::class,'approved']);
+
+Route::get('/declined/{id}',[AdminController::class,'declined']);
+
+Route::get('/showdoctor',[AdminController::class,'showdoctor']);
+
+Route::get('/deletedoctor/{id}',[AdminController::class,'deletedoctor']);
+
+Route::get('/updatedoctor/{id}',[AdminController::class,'updatedoctor']);

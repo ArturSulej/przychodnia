@@ -18,6 +18,7 @@
         <!-- partial -->
         @include('admin.panel')
         <!-- main-panel ends -->
+        
       </div>
       <!-- page-body-wrapper ends -->
     </div>
