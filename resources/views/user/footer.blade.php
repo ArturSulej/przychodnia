@@ -2,25 +2,25 @@
     <div class="container">
       <div class="row px-md-3">
         <div class="col-sm-6 col-lg-3 py-3">
-          <h5>Company</h5>
+          <h5>Firma</h5>
           <ul class="footer-menu">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">Editorial Team</a></li>
-            <li><a href="#">Protection</a></li>
+            <li><a href="#">O nas</a></li>
+            <li><a href="#">Kariera</a></li>
+            <li><a href="#">Zespół redakcyjny</a></li>
+            <li><a href="#">Ochrona danych</a></li>
           </ul>
         </div>
         <div class="col-sm-6 col-lg-3 py-3">
-          <h5>More</h5>
+          <h5>Więcej</h5>
           <ul class="footer-menu">
-            <li><a href="#">Terms & Condition</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Advertise</a></li>
-            <li><a href="#">Join as Doctors</a></li>
+            <li><a href="#">Warunki użytkowania</a></li>
+            <li><a href="#">Prywatność</a></li>
+            <li><a href="#">Porady</a></li>
+            <li><a href="#">Dołącz do zespołu</a></li>
           </ul>
         </div>
         <div class="col-sm-6 col-lg-3 py-3">
-          <h5>Our partner</h5>
+          <h5>Nasi partnerzy</h5>
           <ul class="footer-menu">
             <li><a href="#">One-Fitness</a></li>
             <li><a href="#">One-Drugs</a></li>
@@ -28,12 +28,12 @@
           </ul>
         </div>
         <div class="col-sm-6 col-lg-3 py-3">
-          <h5>Contact</h5>
+          <h5>Kontakt</h5>
           <p class="footer-link mt-2">351 Willow Street Franklin, MA 02038</p>
-          <a href="#" class="footer-link">701-573-7582</a>
-          <a href="#" class="footer-link">healthcare@temporary.net</a>
+          <a href="#" class="footer-link">792-818-090</a>
+          <a href="#" class="footer-link">php.przychodnia@gmail.com</a>
 
-          <h5 class="mt-3">Social Media</h5>
+          <h5 class="mt-3">Media społecznościowe</h5>
           <div class="footer-sosmed mt-3">
             <a href="#" target="_blank"><span class="mai-logo-facebook-f"></span></a>
             <a href="#" target="_blank"><span class="mai-logo-twitter"></span></a>
@@ -46,6 +46,6 @@
 
       <hr>
 
-      <p id="copyright">Copyright &copy; 2020 <a href="https://macodeid.com/" target="_blank">MACode ID</a>. All right reserved</p>
+      <p id="copyright">Copyright &copy; 2022 <a href="#" target="_blank">Artur Sulej</a>. Wszelkie prawa zastrzeżone</p>
     </div>
   </footer>

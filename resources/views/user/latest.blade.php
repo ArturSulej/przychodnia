@@ -1,6 +1,6 @@
 <div class="page-section bg-light">
     <div class="container">
-      <h1 class="text-center wow fadeInUp">Latest News</h1>
+      <h1 class="text-center wow fadeInUp">Wiadomości</h1>
       <div class="row mt-5">
         <div class="col-lg-4 py-2 wow zoomIn">
           <div class="card-blog">
@@ -13,7 +13,7 @@
               </a>
             </div>
             <div class="body">
-              <h5 class="post-title"><a href="blog-details.html">List of Countries without Coronavirus case</a></h5>
+              <h5 class="post-title"><a href="blog-details.html">Lista krajów bez przypadków koronawirusa</a></h5>
               <div class="site-info">
                 <div class="avatar mr-2">
                   <div class="avatar-img">
@@ -21,7 +21,7 @@
                   </div>
                   <span>Roger Adams</span>
                 </div>
-                <span class="mai-time"></span> 1 week ago
+                <span class="mai-time"></span> Tydzień temu
               </div>
             </div>
           </div>
@@ -45,7 +45,7 @@
                   </div>
                   <span>Roger Adams</span>
                 </div>
-                <span class="mai-time"></span> 4 weeks ago
+                <span class="mai-time"></span> 4 tygodnie temu
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
               </a>
             </div>
             <div class="body">
-              <h5 class="post-title"><a href="blog-details.html">What is the impact of eating too much sugar?</a></h5>
+              <h5 class="post-title"><a href="blog-details.html">Jaki jest wpływ cukru na nasze zdrowie?</a></h5>
               <div class="site-info">
                 <div class="avatar mr-2">
                   <div class="avatar-img">
@@ -69,14 +69,14 @@
                   </div>
                   <span>Diego Simmons</span>
                 </div>
-                <span class="mai-time"></span> 2 months ago
+                <span class="mai-time"></span> 2 miesiące temu
               </div>
             </div>
           </div>
         </div>
 
         <div class="col-12 text-center mt-4 wow zoomIn">
-          <a href="blog.html" class="btn btn-primary">Read More</a>
+          <a href="blog.html" class="btn btn-primary">Więcej...</a>
         </div>
 
       </div>

@@ -37,16 +37,21 @@ class HomeController extends Controller
 
     public function appointment(Request $request){
         $data = new appointment;
-        $data->name = $request->name;
-        $data->email = $request->email;
+        if(Auth::id()){
+            $data->user_id = Auth::user()->id;
+            $data->name = Auth::user()->name;
+            $data->email = Auth::user()->email;
+            $data->phone = Auth::user()->phone;
+        }else{
+            $data->name = $request->name;
+            $data->email = $request->email;
+            $data->phone = $request->number;
+        }
         $data->date = $request->date;
-        $data->phone = $request->number;
         $data->message = $request->message;
         $data->doctor = $request->doctor;
         $data->status = 'In progress';
-        if(Auth::id()){
-            $data->user_id = Auth::user()->id;
-        }
+        
         $data->save();
         return redirect()->back()->with('message','Appointment Successful');
     }
