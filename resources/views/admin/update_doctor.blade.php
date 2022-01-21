@@ -35,27 +35,27 @@
                 <form action="{{url('editdoctor',$data->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div style="padding:15px;">
-                        <label>Doctor name</label>
+                        <label>Imię i nazwisko</label>
                         <input type="text" name="name" value="{{$data->name}}" style="color:black;">
                     </div>
                     <div style="padding:15px;">
-                        <label>Phone</label>
+                        <label>Telefon</label>
                         <input type="number" name="phone" value="{{$data->phone}}" style="color:black;">
                     </div>
                     <div style="padding:15px;">
-                        <label>Speciality</label>
+                        <label>Specialność</label>
                         <input type="text" name="speciality" value="{{$data->speciality}}" style="color:black;">
                     </div>
                     <div style="padding:15px;">
-                        <label>Room number</label>
+                        <label>Pokój</label>
                         <input type="text" name="room" value="{{$data->room}}" style="color:black;">
                     </div>
                     <div style="padding:15px;">
-                        <label>Old Image</label>
+                        <label>Stary obraz</label>
                         <img height="150" width="150" src="doctorimage/{{$data->image}}">
                     </div>
                     <div style="padding:15px;">
-                        <label>New Image</label>
+                        <label>Nowy obraz</label>
                         <input type="file" name="file">
                     </div>
                     <div style="padding:15px;">

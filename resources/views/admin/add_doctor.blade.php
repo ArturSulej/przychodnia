@@ -33,33 +33,33 @@
                 <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
                   @csrf
                     <div style="padding: 15px;">
-                        <label>Doctor Name: </label>
-                        <input type="text" name="name" placeholder="Wprowadz imie" style="color:black;" required>
+                        <label>Imię i nazwisko lekarza: </label>
+                        <input type="text" name="name" placeholder="Wprowadz imie i nazwisko" style="color:black;" required>
                     </div>
 
                     <div style="padding: 15px;">
-                      <label>Phone number: </label>
-                      <input type="number" name="number" placeholder="123-456-789" style="color:black;" required>
+                      <label>Numer telefonu: </label>
+                      <input type="number" name="number" placeholder="123456789" style="color:black;" required>
                     </div>
 
                     <div style="padding: 15px;">
-                      <label>Speciality: </label>
+                      <label>Specjalność: </label>
                       <select name="speciality" style="color: black; width: 200px;" required>
-                        <option>--Select--</option>
-                        <option value="skin">Skin</option>
-                        <option value="heart">Heart</option>
-                        <option value="eye">Eye</option>
-                        <option value="nose">Nose</option>
+                        <option>--Wybierz--</option>
+                        <option value="kardiolog">Kardiolog</option>
+                        <option value="laryngolog">Laryngolog</option>
+                        <option value="okulista">Okulista</option>
+                        <option value="dermatolog">Dermatolog</option>
                       </select>
                     </div>
 
                     <div style="padding: 15px;">
-                      <label>Room number: </label>
-                      <input type="text" name="room" placeholder="Pokoj" style="color:black;" required>
+                      <label>Pokój: </label>
+                      <input type="text" name="room" placeholder="101" style="color:black;" required>
                     </div>
 
                     <div style="padding: 15px;">
-                      <label>Doctor Image: </label>
+                      <label>Zdjęcie: </label>
                       <input type="file" name="file" required>
                     </div>
 

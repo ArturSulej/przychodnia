@@ -24,20 +24,20 @@
         @include('user.header')
 
         <div align="center" style="padding: 70px;">
-            <table>
-                <tr style="background-color: black;">
-                    <th style="padding:10px; font-size: 20px; color:white;">Doctor</th>
-                    <th style="padding:10px; font-size: 20px; color:white;">Date</th>
-                    <th style="padding:10px; font-size: 20px; color:white;">Message</th>
-                    <th style="padding:10px; font-size: 20px; color:white;">Status</th>
-                    <th style="padding:10px; font-size: 20px; color:white;">Cancel</th>
+            <table class="table table-striped">
+                <tr>
+                    <th scope="col">Doktor</th>
+                    <th scope="col">Data wizyty</th>
+                    <th scope="col">Wiadomość</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Anuluj wizytę</th>
                 </tr>
                 @foreach($appoint as $appoints)
-                <tr style="background-color: gray;" align="center">
-                    <td style="padding:10px; color:white;">{{$appoints->doctor}}</td>
-                    <td style="padding:10px; color:white;">{{$appoints->date}}</td>
-                    <td style="padding:10px; color:white;">{{$appoints->message}}</td>
-                    <td style="padding:10px; color:white;">{{$appoints->status}}</td>
+                <tr>
+                    <td>{{$appoints->doctor}}</td>
+                    <td>{{$appoints->date}}</td>
+                    <td>{{$appoints->message}}</td>
+                    <td>{{$appoints->status}}</td>
                     <td><a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{url('cancel_appoint',$appoints->id)}}">Cancel</a></td>
                 </tr>
                 @endforeach
