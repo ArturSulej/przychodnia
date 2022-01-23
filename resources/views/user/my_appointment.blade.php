@@ -8,7 +8,7 @@
 
         <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
-        <title>My Appointments</title>
+        <title>Moje wizyty</title>
 
         <link rel="stylesheet" href="../assets/css/maicons.css">
 
@@ -38,7 +38,7 @@
                     <td>{{$appoints->date}}</td>
                     <td>{{$appoints->message}}</td>
                     <td>{{$appoints->status}}</td>
-                    <td><a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{url('cancel_appoint',$appoints->id)}}">Cancel</a></td>
+                    <td><a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{url('cancel_appoint',$appoints->id)}}">Anuluj</a></td>
                 </tr>
                 @endforeach
             </table>

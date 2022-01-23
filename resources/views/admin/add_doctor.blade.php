@@ -30,6 +30,15 @@
                     {{session()->get('message')}}
                   </div>
                 @endif
+                @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+                @endif
                 <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
                   @csrf
                     <div style="padding: 15px;">
@@ -39,7 +48,7 @@
 
                     <div style="padding: 15px;">
                       <label>Numer telefonu: </label>
-                      <input type="number" name="number" placeholder="123456789" style="color:black;" required>
+                      <input type="text" name="number" placeholder="123456789" style="color:black;" required>
                     </div>
 
                     <div style="padding: 15px;">

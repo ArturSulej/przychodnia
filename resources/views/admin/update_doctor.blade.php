@@ -23,13 +23,21 @@
         <!-- partial:partials/_navbar.html -->
         @include('admin.navbar')
         <!-- partial -->
-
         <div class="container-fluid page-body-wrapper">
             <div class="container" align="center" style="padding:100px">
                 @if(session()->has('message'))
                   <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert">X</button>
                     {{session()->get('message')}}
+                  </div>
+                @endif
+                @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
                   </div>
                 @endif
                 <form action="{{url('editdoctor',$data->id)}}" method="POST" enctype="multipart/form-data">
@@ -40,10 +48,10 @@
                     </div>
                     <div style="padding:15px;">
                         <label>Telefon</label>
-                        <input type="number" name="phone" value="{{$data->phone}}" style="color:black;">
+                        <input type="text" name="phone" value="{{$data->phone}}" style="color:black;">
                     </div>
                     <div style="padding:15px;">
-                        <label>Specialność</label>
+                        <label>Specjalność</label>
                         <input type="text" name="speciality" value="{{$data->speciality}}" style="color:black;">
                     </div>
                     <div style="padding:15px;">

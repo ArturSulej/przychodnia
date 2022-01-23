@@ -16,6 +16,11 @@ use App\Notifications\SendEmailNotification;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function addview(){
         if(Auth::id()){
             if(Auth::user()->usertype==1){
@@ -30,6 +35,13 @@ class AdminController extends Controller
     }
 
     public function upload(Request $request){
+        $this->validate($request, [
+            'name' => 'required|max:60|min:5|regex:/^[\pL\s\-]+$/u',
+            'number' => 'required|digits:9',
+            'room' => 'required|max:3',
+        ]);
+
+
         $doctor=new doctor;
 
         $image = $request->file;
@@ -65,64 +77,97 @@ class AdminController extends Controller
     }
 
     public function approved($id){
-        $data = appointment::find($id);
-        $data->status='Approved';
-        $data->save();
+        if(Auth::user()->usertype==1){
+            $data = appointment::find($id);
+            $data->status='Approved';
+            $data->save();
 
-        return redirect()->back();
+            return redirect()->back();
+        }else{
+            return redirect()->back();
+        }
+        
     }
 
     public function declined($id){
-        $data = appointment::find($id);
-        $data->status='Declined';
-        $data->save();
-
+        if(Auth::user()->usertype==1){
+            $data = appointment::find($id);
+            $data->status='Declined';
+            $data->save();
+        }
         return redirect()->back();
     }
 
     public function showdoctor(){
-        $data = doctor::all();
+        if(Auth::user()->usertype==1){
+            $data = doctor::all();
+            return view('admin.showdoctor',compact('data'));
+        }else{
+            return redirect()->back();
+        }
 
-
-        return view('admin.showdoctor',compact('data'));
     }
 
     public function deletedoctor($id){
-        $data = doctor::find($id);
-        $data->delete();
+        if(Auth::user()->usertype==1){
+            $data = doctor::find($id);
+            $data->delete();
 
-        return redirect()->back();
+        }
+        return redirect()->back();   
     }
 
     public function updatedoctor($id){
-        $data = doctor::find($id);
+        if(Auth::user()->usertype==1){
+            $data = doctor::find($id);
 
-        return view('admin.update_doctor',compact('data'));
+            return view('admin.update_doctor',compact('data'));
+        }else{
+            return redirect()->back();
+        }
+        
     }
 
     public function editdoctor(Request $request, $id){
-        $doctor = doctor::find($id);
+        if(Auth::user()->usertype==1){
+            $doctor = doctor::find($id);
 
-        $doctor->name = $request->name;
-        $doctor->phone = $request->phone;
-        $doctor->speciality = $request->speciality;
-        $doctor->room = $request->room;
-        $image = $request->file;
-        if($image){
+            $this->validate($request, [
+                'name' => 'required|max:60|min:5|regex:/^[\pL\s\-]+$/u',
+                'phone' => 'required|digits:9',
+                'room' => 'required|max:3',
+            ]);
+            
+            
+            $doctor->name = $request->name;
+            $doctor->phone = $request->phone;
+            $doctor->speciality = $request->speciality;
+            $doctor->room = $request->room;
             $image = $request->file;
-            $imagename=time().'.'.$image->getClientOriginalExtension();
-            $request->file->move('doctorimage',$imagename);
-            $doctor->image=$imagename;
+            if($image){
+                $image = $request->file;
+                $imagename=time().'.'.$image->getClientOriginalExtension();
+                $request->file->move('doctorimage',$imagename);
+                $doctor->image=$imagename;
+            }
+            
+
+            $doctor->save();
+            return redirect()->back()->with('message','Doctor Updated Successfully');
+        }else{
+            return redirect()->back();
         }
         
-
-        $doctor->save();
-        return redirect()->back()->with('message','Doctor Updated Successfully');
     }
 
     public function emailview($id){
-        $data = appointment::find($id);
-        return view('admin.email_view',compact('data'));
+        if(Auth::user()->usertype==1){
+            $data = appointment::find($id);
+            return view('admin.email_view',compact('data'));
+        }else{
+            return redirect()->back();
+        }
+        
     }
 
     public function sendemail(Request $request,$id){

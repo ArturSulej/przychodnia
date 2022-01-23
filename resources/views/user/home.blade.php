@@ -1,8 +1,3 @@
-{{--
-<x-app-layout>
-
-</x-app-layout>
---}}
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -29,7 +24,15 @@
 
   <!-- Back to top button -->
   <div class="back-to-top"></div>
-
+  @if ($errors->any())
+  <div class="alert alert-danger">
+      <ul>
+          @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+          @endforeach
+      </ul>
+  </div>
+  @endif
   @include('user.header')
 
   @include('user.info')

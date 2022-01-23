@@ -1,5 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
+        <h2>
+            <a class="nav-link" href="{{url('/')}}">Powróć na stronę główną</a>
+        </h2>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
         </h2>
